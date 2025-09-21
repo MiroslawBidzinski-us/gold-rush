@@ -1,4 +1,4 @@
-# gold_rush_resources
+# Gold Rush resources
 
 A repository of resources needed to complete tasks in software engineering classes.
 
@@ -12,12 +12,13 @@ A repository of resources needed to complete tasks in software engineering class
 
 ### How to work with Gradle project (basics)
 
-To build the application, use the gradlew command-line tool. Below are some common operations
-(_note_: on Windows, use `gradlew.bat` instead of `./gradlew`).
+To build the application, use the gradlew command-line tool. (Note: on Windows, use `gradlew.bat` instead of `./gradlew`.)
 
-- `./gradlew` -- build project
-- `./gradlew clean` -- clean project (removes _build_ directory)
-- `./gradlew jar` -- build project and produce JAR file
+Common operations include:
+
+- `./gradlew` — build the project
+- `./gradlew clean` — clean the project (removes the build directory)
+- `./gradlew jar` — build the project and generate a JAR file
 
 To run the application, execute the following command from the project’s root directory:
 
