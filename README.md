@@ -3,6 +3,8 @@
 A repository of resources needed to complete tasks in software engineering classes.
 
 ## Table of contents
+- **pdf/** — folder containing the PDFs used in class
+
 - **gold_rush__empty_prj.zip** — an empty Gradle project;
   you can import it into any IDE or work with it directly from the command line (see below)
   
