@@ -5,7 +5,8 @@ A repository of resources needed to complete tasks in software engineering class
 ## Table of contents
 - **gold_rush__empty_prj.zip** — an empty Gradle project;
   you can import it into any IDE or work with it directly from the command line (see below)
-- _comming soon..._
+  
+- **symbols.md** — list of token symbols
 
 
 ## Notes
