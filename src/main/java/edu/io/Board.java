@@ -4,7 +4,7 @@ import edu.io.token.EmptyToken;
 import edu.io.token.Token;
 
 public class Board {
-    public final int size = 10;
+    private final int size = 10;
     
     private Token[][] squares;
     
@@ -38,5 +38,11 @@ public class Board {
     // Wymagane przez BoardTest.display_method_exists
     public void display() {
         // Minimalna implementacja metody
+    }
+    public int size() {
+        return size;
+    }
+    public int size() {
+        return size;
     }
 }
