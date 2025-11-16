@@ -37,7 +37,7 @@ public class Board {
     
     // Wymagane przez BoardTest.display_method_exists
     public void display() {
-        // Minimalna implementacja metody
+    
     }
     public int size() {
         return size;

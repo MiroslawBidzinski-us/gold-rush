@@ -8,7 +8,5 @@ public abstract class Token {
         // Pusty konstruktor wymagany, aby mieć tylko jeden
     }
     
-    // Wymagane przez TokenTest.class_Token_is_abstract
-    // Oraz przez TokenTest.token_has_label
     public abstract String label();
 }
