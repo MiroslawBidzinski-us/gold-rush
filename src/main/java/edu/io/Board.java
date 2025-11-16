@@ -5,17 +5,18 @@ import edu.io.token.Token;
 
 public class Board {
     private final int size = 10;
-    
+
     private Token[][] squares;
-    
+
     public Board() {
         squares = new Token[size][size];
         clean();
     }
 
     // Zagnieżdżona klasa wymagana przez PlayerTest
-    public record Coords(int col, int row) {}
-    
+    public record Coords(int col, int row) {
+    }
+
     public void clean() {
         Token emptyToken = new EmptyToken();
         for (int row = 0; row < size; row++) {
@@ -34,15 +35,14 @@ public class Board {
     public Token peekToken(int col, int row) {
         return squares[row][col];
     }
-    
+
     // Wymagane przez BoardTest.display_method_exists
     public void display() {
-    
+
     }
+
     public int size() {
         return size;
     }
-    public int size() {
-        return size;
-    }
+
 }
