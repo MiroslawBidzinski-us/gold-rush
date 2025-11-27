@@ -45,4 +45,12 @@ public class Board {
         return size;
     }
 
+    public Board.Coords getAvailableSquare() throws IllegalStateException {
+        for (int row = 0; row < size(); row++) {
+            for (int col = 0; col < size(); col++) {
+                if (peekToken(col, row) instanceof EmptyToken) return new Board.Coords(row, col);
+            }
+        }
+        throw new IllegalStateException("Board is full");
+    }
 }

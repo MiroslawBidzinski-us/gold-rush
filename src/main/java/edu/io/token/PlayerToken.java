@@ -1,9 +1,11 @@
 package edu.io.token;
 
 import edu.io.Board;
+import edu.io.Player;
 
 public class PlayerToken extends Token {
     private final Board board;
+    private final Player player;
     private int col;
     private int row;
 
@@ -19,9 +21,10 @@ public class PlayerToken extends Token {
     }
 
     // Wymagane przez PlayerTest.new_PlayerToken_is_placed_on_the_board
-    public PlayerToken(Board board) {
+    public PlayerToken(Player player, Board board) {
+        super(Label.PLAYER_TOKEN_LABEL);
         this.board = board;
-        // Ustawienie początkowej pozycji na (0, 0)
+        this.player = player;// Ustawienie początkowej pozycji na (0, 0)
         this.col = 0; 
         this.row = 0;
         // Umieszczenie tokenu na planszy przy tworzeniu
