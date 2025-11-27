@@ -14,4 +14,8 @@ public class Game {
         this.player = player;
         this.player.assignToken(new PlayerToken(this.player, this.board));
     }
+
+    public void start() {
+        
+    }
 }
