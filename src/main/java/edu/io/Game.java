@@ -1,8 +1,9 @@
 package edu.io;
 
-import edu.io.token.GoldToken;
 import edu.io.token.PlayerToken;
-import edu.io.token.PyriteToken;
+
+import java.util.Scanner;
+
 
 public class Game {
     private Player player;
@@ -11,18 +12,50 @@ public class Game {
     public Game() {
         board = new Board();
     }
-    
+
     public void join(Player player) {
         this.player = player;
         this.player.assignToken(new PlayerToken(this.player, this.board));
     }
 
     public void start() {
-        board.placeToken(0,5, new GoldToken(1.5));
-        board.placeToken(1,6, new PyriteToken());
-        board.placeToken(3,1, new GoldToken(1.0));
-        board.placeToken(3,3, new GoldToken(1.25));
+        boolean shouldRun = true;
+
+        Scanner inputScanner = new Scanner(System.in);
         board.display();
-        // todo: do zrobienia sterowanie graczem
+        while (shouldRun) {
+
+            boolean validMove = true;
+            do {
+                System.out.print("Wpisz by wykonać ruch (w -  ruch w górę, s - ruch w dół, a - ruch w lewo, d - ruch w prawo, k by zakończyć grę)>> ");
+                String input = inputScanner.nextLine().toLowerCase();
+                if (input.equals("k")) {
+                    shouldRun = false;
+                    break;
+                }
+                PlayerToken.Move move = switch (input) {
+                    case "w" -> PlayerToken.Move.UP;
+                    case "s" -> PlayerToken.Move.DOWN;
+                    case "a" -> PlayerToken.Move.LEFT;
+                    case "d" -> PlayerToken.Move.RIGHT;
+                    default -> PlayerToken.Move.NONE;
+                };
+
+                if (move.equals(PlayerToken.Move.NONE)) {
+                    System.out.println("Niepoprawny kierunek. Spróbuj ponownie");
+                } else {
+                    try {
+                        player.token().move(move);
+                        board.display();
+
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage());
+                        validMove = false;
+                    }
+                }
+            } while (!validMove);
+        }
+
+
     }
 }

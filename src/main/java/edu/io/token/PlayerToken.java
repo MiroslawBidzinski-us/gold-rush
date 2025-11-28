@@ -64,9 +64,10 @@ public class PlayerToken extends Token {
         }
 
         // Aktualizacja planszy i pozycji
+        player.interactWithToken(board.peekToken(this.col, this.row));
         board.placeToken(this.col, this.row, new EmptyToken()); // Poprzednie pole jest puste
         this.col = newCol;
         this.row = newRow;
-        board.placeToken(this.col, this.row, this); // Nowe pole zajęte
+        board.placeToken(this.col, this.row, this); // Nowe pole zajęte this); // Nowe pole zajęte
     }
 }
