@@ -1,6 +1,7 @@
 package edu.io;
 
 import edu.io.token.EmptyToken;
+import edu.io.token.Label;
 import edu.io.token.Token;
 
 public class Board {
@@ -14,7 +15,7 @@ public class Board {
     }
 
     // Zagnieżdżona klasa wymagana przez PlayerTest
-    public record Coords(int col, int row) {
+    public record Coords(int row, int col) {
     }
 
     public void clean() {
@@ -38,7 +39,13 @@ public class Board {
 
     // Wymagane przez BoardTest.display_method_exists
     public void display() {
+        for (Token[] row : squares) {
+            for (Token token : row) {
+                System.out.print(token.label());
+            }
+            System.out.println();
 
+        }
     }
 
     public int size() {

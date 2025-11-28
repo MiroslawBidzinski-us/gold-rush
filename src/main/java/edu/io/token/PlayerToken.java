@@ -33,7 +33,7 @@ public class PlayerToken extends Token {
 
     // Wymagane przez PlayerTest.new_PlayerToken_is_placed_on_the_board
     public Board.Coords pos() {
-        return new Board.Coords(col, row);
+        return new Board.Coords(row, col);
     }
 
     // Wymagane przez wszystkie testy ruchu (PlayerTest)

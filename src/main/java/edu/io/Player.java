@@ -18,17 +18,17 @@ public class Player {
         return gold;
     }
 
-    private double validateAmount(double amount) {
-        if (amount < 0) throw new IllegalArgumentException("Wartość złota nie może być ujemna");
-        return amount;
-    }
 
     public void gainGold(double amount) throws IllegalArgumentException {
-        this.gold += validateAmount(amount);
+        if (amount < 0) throw new IllegalArgumentException("Wartość złota nie może być ujemna");
+        this.gold += amount;
     }
 
     public void loseGold(double amount) throws IllegalArgumentException {
-        this.gold = validateAmount(this.gold - validateAmount(amount));
+        if (amount < 0) throw new IllegalArgumentException("Wartość złota nie może być ujemna");
+        double updatedGoldAmount = this.gold - amount;
+        if (updatedGoldAmount < 0) throw new IllegalArgumentException("Suma złota na koncie nie może być ujemna");
+        this.gold = updatedGoldAmount;
     }
 
     public void interactWithToken(Token token) {
