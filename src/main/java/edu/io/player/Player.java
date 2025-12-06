@@ -29,15 +29,6 @@ public class Player {
         return token;
     }
 
-    public void gainGold(double amount) throws IllegalArgumentException {
-        this.gold.gain(amount);
-    }
-
-    public void loseGold(double amount) throws IllegalArgumentException {
-        this.gold.lose(amount);
-    }
-
-
     public void interactWithToken(Token token) {
 
         switch (token) {
@@ -47,7 +38,7 @@ public class Player {
             }
             case PickaxeToken pickaxeToken -> shed.add(pickaxeToken);
             case AnvilToken anvilToken -> {
-                if (shed.getTool() instanceof PickaxeToken pickaxe) pickaxe.repair();
+                if (shed.getTool() instanceof Repairable repairable) repairable.repair();
             }
             default -> {
             }
