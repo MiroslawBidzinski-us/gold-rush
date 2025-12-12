@@ -1,0 +1,1 @@
+*** Mirosław Bidziński - Gold Rush ***
